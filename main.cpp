@@ -1,76 +1,26 @@
+#include "Animal.h"
+#include "Ave.h"
+#include "Canino.h"
+#include "Felino.h"
 #include <iostream>
-#include "Velero.h"
-#include "Lancha.h"
-#include "Submarino.h"
+#include <string>
 using namespace std;
 
 int main() {
-    string nombre, material;
-    int capacidad, anio, velas, potencia, prof, trip;
-    double longitud, combustible;
+    Ave p1("Juan", 2), p2("AMLO", 3), p3("Claudia", 1);
+    p1.comer();
+    p2.dormir();
+    p3.volar();
 
-    cout << "=== REGISTRO DE EMBARCACIONES ===" << endl;
+    Felino f1("Nano", 4), f2("Mario", 5), f3("Marron", 3);
+    f1.comer();
+    f2.dormir();
+    f3.aranar();
 
-    cin.ignore();
-    cout << "\n--- VELERO ---" << endl;
-    cout << "Nombre: ";
-    getline(cin, nombre);
-    cout << "Capacidad: ";
-    cin >> capacidad;
-    cout << "Longitud (m): ";
-    cin >> longitud;
-    cout << "Año de fabricación: ";
-    cin >> anio;
-    cout << "Número de velas: ";
-    cin >> velas;
-    cin.ignore();
-    cout << "Material del mástil: ";
-    getline(cin, material);
+    Canino c1("Daniel", 5), c2("Sergio", 6), c3("Rocky", 4);
+    c1.comer();
+    c2.dormir();
+    c3.irPorPelota();
 
-    Velero v(nombre, capacidad, longitud, anio, velas, material);
-    v.mostrarDatos();
-    v.izarVelas();
-
-
-    cout << "\n--- LANCHA ---" << endl;
-    cin.ignore();
-    cout << "Nombre: ";
-    getline(cin, nombre);
-    cout << "Capacidad: ";
-    cin >> capacidad;
-    cout << "Longitud (m): ";
-    cin >> longitud;
-    cout << "Año de fabricación: ";
-    cin >> anio;
-    cout << "Potencia (HP): ";
-    cin >> potencia;
-    cout << "Combustible inicial (L): ";
-    cin >> combustible;
-
-    Lancha l(nombre, capacidad, longitud, anio, potencia, combustible);
-    l.mostrarDatos();
-    l.acelerar();
-
-
-    cout << "\n--- SUBMARINO ---" << endl;
-    cin.ignore();
-    cout << "Nombre: ";
-    getline(cin, nombre);
-    cout << "Capacidad: ";
-    cin >> capacidad;
-    cout << "Longitud (m): ";
-    cin >> longitud;
-    cout << "Año de fabricación: ";
-    cin >> anio;
-    cout << "Profundidad máxima (m): ";
-    cin >> prof;
-    cout << "Tripulantes: ";
-    cin >> trip;
-
-    Submarino s(nombre, capacidad, longitud, anio, prof, trip);
-    s.mostrarDatos();
-    s.sumergir();
-
-    cout << "\n=== Fin del programa ===" << endl;
     return 0;
 }
